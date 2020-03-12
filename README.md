@@ -9,7 +9,7 @@ A No-Bullshit-No-Bullshit NSP, NSZ, XCI, and XCZ Installer for Nintendo Switch
 - Installs NSP/NSZ/XCI/XCZ files over the internet by URL or Google Drive
 - Verifies NCAs by header signature before they're installed
 - Installs and manages the latest signature patches quickly and easily
-- Works on SX OS
+- Works on SX OS and Atmosphere
 
 ## Thanks to
 - Adubbz
