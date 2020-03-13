@@ -15,3 +15,7 @@ A No-Bullshit-No-Bullshit NSP, NSZ, XCI, and XCZ Installer for Nintendo Switch
 - Adubbz
 - Goffrier
 - Blawar
+- Xortroll
+
+## Prominently Modified
+This code was prominently modified by blawar on 2020-03-12
