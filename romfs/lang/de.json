@@ -179,7 +179,7 @@
         "language": {
             "title": "Wähle Tinleaf Installer Sprache",
             "desc": "Die Software wird danach beendet. Drücke B um den Vorgang abzubrechen.",
-            "system_language": "System Standard"
+            "system_language": "System"
         },
         "title": "Ändere Tinleaf Installer Einstellungen!",
         "buttons": "\ue0e0 Auswählen/Ändern    \ue0e1 Abbrechen "
