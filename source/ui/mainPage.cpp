@@ -35,19 +35,19 @@ namespace inst::ui {
     }
 
     MainPage::MainPage() : Layout::Layout() {
-        this->SetBackgroundColor(COLOR("#670000FF"));
+        this->SetBackgroundColor(COLOR("#343E87FF"));
         if (std::filesystem::exists(inst::config::appDir + "/background.png")) this->SetBackgroundImage(inst::config::appDir + "/background.png");
         else this->SetBackgroundImage("romfs:/images/background.jpg");
-        this->topRect = Rectangle::New(0, 0, 1280, 94, COLOR("#170909FF"));
-        this->botRect = Rectangle::New(0, 659, 1280, 61, COLOR("#17090980"));
+        this->topRect = Rectangle::New(0, 0, 1280, 94, COLOR("#222D44FF"));
+        this->botRect = Rectangle::New(0, 659, 1280, 61, COLOR("#222D4480"));
         this->titleImage = Image::New(0, 0, "romfs:/images/logo.png");
         this->appVersionText = TextBlock::New(480, 49, "v" + inst::config::appVersion, 22);
         this->appVersionText->SetColor(COLOR("#FFFFFFFF"));
         this->butText = TextBlock::New(10, 678, "main.buttons"_lang, 24);
         this->butText->SetColor(COLOR("#FFFFFFFF"));
-        this->optionMenu = pu::ui::elm::Menu::New(0, 95, 1280, COLOR("#67000000"), 94, 6);
+        this->optionMenu = pu::ui::elm::Menu::New(0, 95, 1280, COLOR("#343E8700"), 94, 6);
         this->optionMenu->SetOnFocusColor(COLOR("#00000033"));
-        this->optionMenu->SetScrollbarColor(COLOR("#170909FF"));
+        this->optionMenu->SetScrollbarColor(COLOR("#222D44FF"));
         this->installMenuItem = pu::ui::elm::MenuItem::New("main.menu.sd"_lang);
         this->installMenuItem->SetColor(COLOR("#FFFFFFFF"));
         this->installMenuItem->SetIcon("romfs:/images/icons/micro-sd.png");
