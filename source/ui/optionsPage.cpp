@@ -19,12 +19,12 @@ namespace inst::ui {
     std::vector<std::string> languageStrings = {"English", "日本語", "Français", "Deutsch", "Italiano", "Русский"};
 
     optionsPage::optionsPage() : Layout::Layout() {
-        this->SetBackgroundColor(COLOR("#670000FF"));
+        this->SetBackgroundColor(COLOR("#343E87FF"));
         if (std::filesystem::exists(inst::config::appDir + "/background.png")) this->SetBackgroundImage(inst::config::appDir + "/background.png");
         else this->SetBackgroundImage("romfs:/images/background.jpg");
-        this->topRect = Rectangle::New(0, 0, 1280, 94, COLOR("#170909FF"));
-        this->infoRect = Rectangle::New(0, 95, 1280, 60, COLOR("#17090980"));
-        this->botRect = Rectangle::New(0, 660, 1280, 60, COLOR("#17090980"));
+        this->topRect = Rectangle::New(0, 0, 1280, 94, COLOR("#222D44FF"));
+        this->infoRect = Rectangle::New(0, 95, 1280, 60, COLOR("#222D4480"));
+        this->botRect = Rectangle::New(0, 660, 1280, 60, COLOR("#222D4480"));
         this->titleImage = Image::New(0, 0, "romfs:/images/logo.png");
         this->appVersionText = TextBlock::New(480, 49, "v" + inst::config::appVersion, 22);
         this->appVersionText->SetColor(COLOR("#FFFFFFFF"));
@@ -34,7 +34,7 @@ namespace inst::ui {
         this->butText->SetColor(COLOR("#FFFFFFFF"));
         this->menu = pu::ui::elm::Menu::New(0, 156, 1280, COLOR("#FFFFFF00"), 84, (506 / 84));
         this->menu->SetOnFocusColor(COLOR("#00000033"));
-        this->menu->SetScrollbarColor(COLOR("#17090980"));
+        this->menu->SetScrollbarColor(COLOR("#222D4480"));
         this->Add(this->topRect);
         this->Add(this->infoRect);
         this->Add(this->botRect);
