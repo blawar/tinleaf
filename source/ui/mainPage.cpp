@@ -7,6 +7,7 @@
 #include "util/lang.hpp"
 #include "sigInstall.hpp"
 #include "data/buffered_placeholder_writer.hpp"
+#include "nx/usbhdd.h"
 
 #define COLOR(hex) pu::ui::Color::FromHex(hex)
 
@@ -107,7 +108,13 @@ namespace inst::ui {
     }
 
     void MainPage::sigPatchesMenuItem_Click() {
-        sig::installSigPatches();
+		if(nx::hdd::rootPath()) {
+			mainApp->sdinstPage->drawMenuItems(true, nx::hdd::rootPath());
+			mainApp->sdinstPage->menu->SetSelectedIndex(0);
+			mainApp->LoadLayout(mainApp->sdinstPage);
+		} else {
+			inst::ui::mainApp->CreateShowDialog("main.net.title"_lang, "main.net.desc"_lang, {"common.ok"_lang}, true);
+		}
     }
 
     void MainPage::exitMenuItem_Click() {
