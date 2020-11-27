@@ -4,10 +4,15 @@
             "sd": "SDカードからインストール",
             "net": "LANまたはインターネット経由でインストール",
             "usb": "USB経由でインストール",
+			"hdd": "Install over USB HDD",
             "sig": "署名パッチを管理する",
             "set": "設定",
             "exit": "終了"
         },
+		"hdd": {
+			"title": "USB HDD",
+			"notfound": "USB HDD is not connected."
+		},
         "net": {
             "title": "ネットワーク接続は利用できません",
             "desc": "機内モードが無効になっていて、ローカルネットワークに接続していることを確認してください。"

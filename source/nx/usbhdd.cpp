@@ -106,12 +106,12 @@ bool isReiNX()
 
 bool isSx()
 {
-	return g_isSx && !isReiNX();
+	return g_isSx && !g_isReinx;
 }
 
 bool isAms()
 {
-	return !isSx() && !isReiNX();
+	return !g_isSx && !g_isReinx;
 }
 
 namespace nx::hdd
@@ -183,9 +183,12 @@ namespace nx::hdd
 
 	const char* rootPath(u32 index)
 	{
-		if(isSx() && count())
+		if(isSx())
 		{
-			return "usbhdd:";
+			if(count())
+			{
+				return "usbhdd:/";
+			}
 		}
 		else
 		{

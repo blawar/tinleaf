@@ -4,10 +4,15 @@
             "sd": "Install from SD card",
             "net": "Install over LAN or internet",
             "usb": "Install over USB",
+			"hdd": "Install over USB HDD",
             "sig": "Manage signature patches",
             "set": "Settings",
             "exit": "Exit"
         },
+		"hdd": {
+			"title": "USB HDD",
+			"notfound": "USB HDD is not connected."
+		},
         "net": {
             "title": "Network connection not available",
             "desc": "Check that airplane mode is disabled and you're connected to a local network."

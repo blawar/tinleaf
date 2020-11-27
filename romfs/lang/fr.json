@@ -4,10 +4,15 @@
             "sd": "Installer à partir de la carte SD",
             "net": "Installer à partir d'un LAN ou d'internet",
             "usb": "Installer à partir d'un périphèrique USB",
+			"hdd": "Install over USB HDD",
             "sig": "Gérer les patchs de signatures",
             "set": " Paramètres",
             "exit": " Quitter"
         },
+		"hdd": {
+			"title": "USB HDD",
+			"notfound": "USB HDD is not connected."
+		},
         "net": {
             "title": "Connection au réseau impossible",
             "desc": "Vérifiez  que le mode avion est désactivé et que vous êtes connecté à un réseau local."

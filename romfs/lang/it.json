@@ -4,10 +4,15 @@
             "sd": "Installa dalla SD",
             "net": "Installa via LAN o da internet",
             "usb": "Installa via USB",
+			"hdd": "Install over USB HDD",
             "sig": "Gestisci le SigPatches",
             "set": "Impostazioni",
             "exit": "Esci"
         },
+		"hdd": {
+			"title": "USB HDD",
+			"notfound": "USB HDD is not connected."
+		},
         "net": {
             "title": "Connessione alla rete non disponibile",
             "desc": "Controlla che la modalità aereo sia disattivata e che tu sia connesso ad una rete."
