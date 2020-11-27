@@ -29,10 +29,10 @@ namespace inst::ui {
             tin::data::NUM_BUFFER_SEGMENTS = 128;
         }
         if (!updateFinished && (!inst::config::autoUpdate || inst::util::getIPAddress() == "1.0.0.127")) updateFinished = true;
-        if (!updateFinished && menuLoaded && inst::config::updateInfo.size()) {
+        /*if (!updateFinished && menuLoaded && inst::config::updateInfo.size()) {
             updateFinished = true;
             optionsPage::askToUpdate(inst::config::updateInfo);
-        }
+        }*/
     }
 
     MainPage::MainPage() : Layout::Layout() {
@@ -108,7 +108,7 @@ namespace inst::ui {
     }
 
     void MainPage::sigPatchesMenuItem_Click() {
-		if(nx::hdd::rootPath()) {
+		if(nx::hdd::count() && nx::hdd::rootPath()) {
 			mainApp->sdinstPage->drawMenuItems(true, nx::hdd::rootPath());
 			mainApp->sdinstPage->menu->SetSelectedIndex(0);
 			mainApp->LoadLayout(mainApp->sdinstPage);
