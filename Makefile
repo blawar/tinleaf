@@ -43,9 +43,10 @@ SOURCES		:=	source source/ui source/data source/install source/nx source/nx/ipc 
 DATA		:=	data
 INCLUDES	:=	include include/ui include/data include/install include/nx include/nx/ipc include/util include/Plutonium/Plutonium/Output-switch/include
 APP_TITLE	:=	Tinleaf Installer
-APP_AUTHOR	:=	Adubbz & Xortroll
-APP_VERSION	:=	1.4.0
+APP_AUTHOR	:=	Adubbz and Xortroll
+APP_VERSION	:=	1.4.1
 ROMFS		:=	romfs
+APP_ICON	:=	icon.jpg
 
 #---------------------------------------------------------------------------------
 # options for code generation
@@ -132,12 +133,8 @@ endif
 
 ifeq ($(strip $(ICON)),)
 	icons := $(wildcard *.jpg)
-	ifneq (,$(findstring $(TARGET).jpg,$(icons)))
-		export APP_ICON := $(TOPDIR)/$(TARGET).jpg
-	else
-		ifneq (,$(findstring icon.jpg,$(icons)))
-			export APP_ICON := $(TOPDIR)/icon.jpg
-		endif
+	ifneq (,$(findstring icon.jpg,$(icons)))
+		export APP_ICON := $(TOPDIR)/icon.jpg
 	endif
 else
 	export APP_ICON := $(TOPDIR)/$(ICON)
@@ -158,6 +155,8 @@ endif
 ifneq ($(ROMFS),)
 	export NROFLAGS += --romfsdir=$(CURDIR)/$(ROMFS)
 endif
+
+$(info $$NROFLAGS is [${NROFLAGS}])
 
 .PHONY: $(BUILD) clean all
 

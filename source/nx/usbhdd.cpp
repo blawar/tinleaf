@@ -76,43 +76,6 @@ do not use the software.
 #include <dirent.h>
 #include <threads.h>
 #include <usbhsfs.h>
-#include "tx.h"
-#include "usbfs.h"
-#include "usbfsdevice.h"
-
-static bool g_isReinx = false;
-static bool g_isSx = false;
-
-bool isServiceRunning(const char *serviceName)
-{
-	Handle handle;
-	SmServiceName sn;
-	memset(&sn, 0, sizeof(sn));
-	strcpy(sn.name, serviceName);
-	bool running = R_FAILED(smRegisterService(&handle, sn, false, 1));
-
-	svcCloseHandle(handle);
-
-	if(!running)
-		smUnregisterService(sn);
-
-	return running;
-}
-
-bool isReiNX()
-{
-	return g_isReinx;
-}
-
-bool isSx()
-{
-	return g_isSx && !g_isReinx;
-}
-
-bool isAms()
-{
-	return !g_isSx && !g_isReinx;
-}
 
 namespace nx::hdd
 {
@@ -171,31 +134,14 @@ namespace nx::hdd
 
 	u32 count()
 	{
-		if(isSx())
-		{
-			return usbFsDeviceGetMountStatus() == 1 ? 1 : 0;
-		}
-		else
-		{
-			return usbHsFsGetMountedDeviceCount();
-		}
+		return usbHsFsGetMountedDeviceCount();
 	}
 
 	const char* rootPath(u32 index)
 	{
-		if(isSx())
+		if(index < usbHsFsGetMountedDeviceCount())
 		{
-			if(count())
-			{
-				return "usbhdd:/";
-			}
-		}
-		else
-		{
-			if(index < usbHsFsGetMountedDeviceCount())
-			{
-				return g_usbDevices[index].name;
-			}
+			return g_usbDevices[index].name;
 		}
 
 		return nullptr;
@@ -203,57 +149,37 @@ namespace nx::hdd
 
 	bool init()
 	{
-		g_isReinx = isServiceRunning("rnx");
-		g_isSx = isServiceRunning("tx");
-
-		if(isSx())
+		if(g_statusChangeEvent)
 		{
-			txInitialize();
-			usbFsInitialize();
-			usbFsDeviceRegister();
+			return true;
 		}
-		else
+
+		if(usbHsFsInitialize(0))
 		{
-			if(g_statusChangeEvent)
-			{
-				return true;
-			}
-
-			if(usbHsFsInitialize())
-			{
-				return false;
-			}
-
-			g_statusChangeEvent = usbHsFsGetStatusChangeUserEvent();
-
-			ueventCreate(&g_exitEvent, true);
-
-			thrd_create(&g_thread, entry, NULL);
+			return false;
 		}
+
+		g_statusChangeEvent = usbHsFsGetStatusChangeUserEvent();
+
+		ueventCreate(&g_exitEvent, true);
+
+		thrd_create(&g_thread, entry, NULL);
 
 		return true;
 	}
 
 	bool exit()
 	{
-		if(isSx())
+		if(!g_statusChangeEvent)
 		{
-			txExit();
-			usbFsExit();
+			return false;
 		}
-		else
-		{
-			if(!g_statusChangeEvent)
-			{
-				return false;
-			}
 
-			ueventSignal(&g_exitEvent);
+		ueventSignal(&g_exitEvent);
 
-			thrd_join(g_thread, NULL);
+		thrd_join(g_thread, NULL);
 
-			g_statusChangeEvent = NULL;
-		}
+		g_statusChangeEvent = NULL;
 
 		return true;
 	}
