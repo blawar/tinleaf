@@ -44,7 +44,7 @@ DATA		:=	data
 INCLUDES	:=	include include/ui include/data include/install include/nx include/nx/ipc include/util include/Plutonium/Plutonium/Output-switch/include
 APP_TITLE	:=	Tinleaf Installer
 APP_AUTHOR	:=	Adubbz and Xortroll
-APP_VERSION	:=	1.4.1
+APP_VERSION	:=	1.4.3
 ROMFS		:=	romfs
 APP_ICON	:=	icon.jpg
 
@@ -56,15 +56,15 @@ ARCH	:=	-march=armv8-a+crc+crypto -mtune=cortex-a57 -mtp=soft -fPIE
 CFLAGS	:=	-g -Wall -O2 -ffunction-sections \
 			$(ARCH) $(DEFINES)
 
-CFLAGS	+=	$(INCLUDE) -D__SWITCH__ -Wall -Werror #-D__DEBUG__ -DNXLINK_DEBUG
+CFLAGS	+=	$(INCLUDE) -D__SWITCH__ -Wno-deprecated -Wall #-D__DEBUG__ -DNXLINK_DEBUG
 
-CXXFLAGS	:= $(CFLAGS) -fno-rtti -std=gnu++17 -Wall -Werror
+CXXFLAGS	:= $(CFLAGS) -fno-rtti -std=gnu++17 -Wall
 
 
 ASFLAGS	:=	-g $(ARCH)
 LDFLAGS	=	-specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
 
-LIBS	:=  -lcurl -lz -lusbhsfs -lmbedtls -lmbedcrypto -lmbedx509 -lminizip -lnx -lstdc++fs -lzzip -lpu -lfreetype -lSDL2_mixer -lopusfile -lopus -lmodplug -lmpg123 -lvorbisidec -lSDL2 -lc -logg -lSDL2_ttf -lSDL2_gfx -lSDL2_image -lwebp -lpng -ljpeg `sdl2-config --libs` `freetype-config --libs` -lzstd
+LIBS	:=  -lcurl -lz -lssh2 -lusbhsfsd -lntfs-3g -lmbedtls -lmbedcrypto -lmbedx509 -lminizip -lnx -lstdc++fs -lzzip -lpu -lfreetype -lSDL2_mixer -lopusfile -lopus -lmodplug -lmpg123 -lvorbisidec -lSDL2 -lc -logg -lSDL2_ttf -lSDL2_gfx -lSDL2_image -lwebp -lpng -ljpeg `sdl2-config --libs` `freetype-config --libs` -lzstd
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
@@ -166,7 +166,7 @@ all: $(BUILD)
 $(BUILD):
 	@[ -d $@ ] || mkdir -p $@
 	#comment this out if you are hacking on the code or compilation will take forever
-	$(MAKE) --no-print-directory -C include/Plutonium -f Makefile lib
+	#$(MAKE) --no-print-directory -C include/Plutonium -f Makefile lib
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
 
 #---------------------------------------------------------------------------------
