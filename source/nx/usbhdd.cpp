@@ -76,15 +76,18 @@ do not use the software.
 #include <dirent.h>
 #include <threads.h>
 #include <usbhsfs.h>
+#include <mutex>
 
 namespace nx::hdd
 {
+	static const u32 MAX_DEVICES = 32;
 	static UEvent *g_statusChangeEvent = NULL, g_exitEvent = { 0 };
 
 	static u32 g_usbDeviceCount = 0;
-	static UsbHsFsDevice *g_usbDevices = NULL;
+	UsbHsFsDevice g_usbDevices[MAX_DEVICES];
 
 	static thrd_t g_thread = { 0 };
+	static std::mutex g_mutex;
 
 	static int entry(void *arg)
 	{
@@ -101,12 +104,8 @@ namespace nx::hdd
 		{
 			rc = waitMulti(&idx, -1, status_change_event_waiter, exit_event_waiter);
 			if(R_FAILED(rc)) continue;
-
-			if(g_usbDevices)
-			{
-				free(g_usbDevices);
-				g_usbDevices = NULL;
-			}
+			
+			std::scoped_lock lock(g_mutex);
 
 			if(idx == 1)
 			{
@@ -117,28 +116,31 @@ namespace nx::hdd
 
 			if(!g_usbDeviceCount) continue;
 
-			g_usbDevices = (UsbHsFsDevice*)calloc(g_usbDeviceCount, sizeof(UsbHsFsDevice));
-			if(!g_usbDevices)
-			{
-				continue;
-			}
-
-			if(!(listed_device_count = usbHsFsListMountedDevices(g_usbDevices, g_usbDeviceCount)))
+			if(!(listed_device_count = usbHsFsListMountedDevices(g_usbDevices, std::min(g_usbDeviceCount, MAX_DEVICES))))
 			{
 				continue;
 			}
 		}
+		
+		g_usbDeviceCount = 0;
 
 		return 0;
 	}
 
 	u32 count()
 	{
-		return usbHsFsGetMountedDeviceCount();
+		return std::min(g_usbDeviceCount, MAX_DEVICES);
 	}
 
 	const char* rootPath(u32 index)
 	{
+		if(index >= MAX_DEVICES)
+		{
+			return nullptr;
+		}
+
+		std::scoped_lock lock(g_mutex);
+		
 		if(index < usbHsFsGetMountedDeviceCount())
 		{
 			return g_usbDevices[index].name;
@@ -180,6 +182,8 @@ namespace nx::hdd
 		thrd_join(g_thread, NULL);
 
 		g_statusChangeEvent = NULL;
+		
+		usbHsFsExit();
 
 		return true;
 	}
