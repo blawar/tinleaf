@@ -44,7 +44,7 @@ DATA		:=	data
 INCLUDES	:=	include include/ui include/data include/install include/nx include/nx/ipc include/util include/Plutonium/Plutonium/Output-switch/include
 APP_TITLE	:=	Tinleaf Installer
 APP_AUTHOR	:=	Adubbz and Xortroll
-APP_VERSION	:=	1.4.3
+APP_VERSION	:=	1.4.4
 ROMFS		:=	romfs
 APP_ICON	:=	icon.jpg
 
