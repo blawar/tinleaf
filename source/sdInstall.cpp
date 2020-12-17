@@ -107,7 +107,7 @@ namespace nspInstStuff {
         if(nspInstalled) {
             inst::ui::instPage::setInstInfoText("inst.info_page.complete"_lang);
             inst::ui::instPage::setInstBarPerc(100);
-            std::thread audioThread(inst::util::playAudio,"romfs:/audio/tinleaf.wav");
+
             if (ourTitleList.size() > 1) {
                 if (inst::config::deletePrompt) {
                     if(inst::ui::mainApp->CreateShowDialog(std::to_string(ourTitleList.size()) + "inst.sd.delete_info_multi"_lang, "inst.sd.delete_desc"_lang, {"common.no"_lang,"common.yes"_lang}, false) == 1) {
@@ -121,7 +121,6 @@ namespace nspInstStuff {
                     if(inst::ui::mainApp->CreateShowDialog(inst::util::shortenString(ourTitleList[0].filename().string(), 32, true) + "inst.sd.delete_info"_lang, "inst.sd.delete_desc"_lang, {"common.no"_lang,"common.yes"_lang}, false) == 1) if (std::filesystem::exists(ourTitleList[0])) std::filesystem::remove(ourTitleList[0]);
                 } else inst::ui::mainApp->CreateShowDialog(inst::util::shortenString(ourTitleList[0].filename().string(), 42, true) + "inst.info_page.desc1"_lang, Language::GetRandomMsg(), {"common.ok"_lang}, true);
             }
-            audioThread.join();
         }
 
         LOG_DEBUG("Done");
