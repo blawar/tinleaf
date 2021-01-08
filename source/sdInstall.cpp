@@ -67,7 +67,10 @@ namespace nspInstStuff {
         try
         {
             for (titleItr = 0; titleItr < ourTitleList.size(); titleItr++) {
-                inst::ui::instPage::setTopInstInfoText("inst.info_page.top_info0"_lang + inst::util::shortenString(ourTitleList[titleItr].filename().string(), 40, true) + "inst.sd.source_string"_lang);
+                if (ourTitleList[titleItr].string().compare(0, 6, "sdmc:/") == 0)
+                    inst::ui::instPage::setTopInstInfoText("inst.info_page.top_info0"_lang + inst::util::shortenString(ourTitleList[titleItr].filename().string(), 40, true) + "inst.sd.source_string"_lang);
+                else
+                    inst::ui::instPage::setTopInstInfoText("inst.info_page.top_info0"_lang + inst::util::shortenString(ourTitleList[titleItr].filename().string(), 40, true) + "inst.hdd.source_string"_lang);
                 std::unique_ptr<tin::install::Install> installTask;
 
                 if (ourTitleList[titleItr].extension() == ".xci" || ourTitleList[titleItr].extension() == ".xcz") {

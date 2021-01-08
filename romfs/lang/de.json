@@ -4,15 +4,15 @@
             "sd": "Von SD-Karte installieren",
             "net": "Über LAN oder Internet installieren",
             "usb": "Über USB installieren",
-			"hdd": "Install over USB HDD",
+            "hdd": "Install over USB HDD",
             "sig": "Verwalte Signatur-Patches",
             "set": "Einstellungen",
             "exit": "Beenden"
         },
-		"hdd": {
-			"title": "USB HDD",
-			"notfound": "USB HDD is not connected."
-		},
+        "hdd": {
+            "title": "USB HDD",
+            "notfound": "USB HDD is not connected."
+        },
         "net": {
             "title": "Netzwerk Verbindung nicht verfügbar",
             "desc": "Überprüfe ob der Flugzeug-Modus deaktiviert ist und ob du mit einem lokalen Netzwerk verbunden bist"
@@ -74,6 +74,9 @@
             "delete_info_multi": " Dateien erfolgreich installiert! Sollen diese von der SD-Karte gelöscht werden?",
             "delete_desc": "Die originalen Dateien werden nach der Installation nicht mehr benötigt",
             "buttons": "\ue0e0 Datei auswählen    \ue0e3 Alle auswählen    \ue0ef Datei(en) installieren    \ue0e1 Abbrechen"
+        },
+        "hdd": {
+            "source_string": " from USB HDD"
         },
         "usb": {
             "help": {

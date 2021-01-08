@@ -4,15 +4,15 @@
             "sd": "SDカードからインストール",
             "net": "LANまたはインターネット経由でインストール",
             "usb": "USB経由でインストール",
-			"hdd": "Install over USB HDD",
+            "hdd": "Install over USB HDD",
             "sig": "署名パッチを管理する",
             "set": "設定",
             "exit": "終了"
         },
-		"hdd": {
-			"title": "USB HDD",
-			"notfound": "USB HDD is not connected."
-		},
+        "hdd": {
+            "title": "USB HDD",
+            "notfound": "USB HDD is not connected."
+        },
         "net": {
             "title": "ネットワーク接続は利用できません",
             "desc": "機内モードが無効になっていて、ローカルネットワークに接続していることを確認してください。"
@@ -74,6 +74,9 @@
             "delete_info_multi": " ファイルが正常にインストールされました！ SDカードから削除しますか？",
             "delete_desc": "元のファイルはインストール後に不要になりました",
             "buttons": "\ue0e0 ファイルを選択    \ue0e3 すべて選択    \ue0ef ファイルをインストール    \ue0e2 ヘルプ    \ue0e1 キャンセル"
+        },
+        "hdd": {
+            "source_string": " from USB HDD"
         },
         "usb": {
             "help": {

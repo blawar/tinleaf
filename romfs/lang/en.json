@@ -4,15 +4,15 @@
             "sd": "Install from SD card",
             "net": "Install over LAN or internet",
             "usb": "Install over USB",
-			"hdd": "Install over USB HDD",
+            "hdd": "Install over USB HDD",
             "sig": "Manage signature patches",
             "set": "Settings",
             "exit": "Exit"
         },
-		"hdd": {
-			"title": "USB HDD",
-			"notfound": "USB HDD is not connected."
-		},
+        "hdd": {
+            "title": "USB HDD",
+            "notfound": "USB HDD is not connected."
+        },
         "net": {
             "title": "Network connection not available",
             "desc": "Check that airplane mode is disabled and you're connected to a local network."
@@ -74,6 +74,9 @@
             "delete_info_multi": " files installed successfully! Delete them from the SD card?",
             "delete_desc": "The original files aren't needed anymore after they've been installed",
             "buttons": "\ue0e0 Select File    \ue0e3 Select All    \ue0ef Install File(s)    \ue0e2 Help    \ue0e1 Cancel"
+        },
+        "hdd": {
+            "source_string": " from USB HDD"
         },
         "usb": {
             "help": {
