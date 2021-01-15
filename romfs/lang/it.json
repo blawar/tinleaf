@@ -4,15 +4,15 @@
             "sd": "Installa dalla SD",
             "net": "Installa via LAN o da internet",
             "usb": "Installa via USB",
-			"hdd": "Install over USB HDD",
+            "hdd": "Installa dall'HDD USB",
             "sig": "Gestisci le SigPatches",
             "set": "Impostazioni",
             "exit": "Esci"
         },
-		"hdd": {
-			"title": "USB HDD",
-			"notfound": "USB HDD is not connected."
-		},
+        "hdd": {
+            "title": "HDD USB",
+            "notfound": "L'HDD USB non è connesso."
+        },
         "net": {
             "title": "Connessione alla rete non disponibile",
             "desc": "Controlla che la modalità aereo sia disattivata e che tu sia connesso ad una rete."
@@ -38,7 +38,7 @@
         "net": {
             "help": {
                 "title": "Aiuto",
-                "desc": "I file possono essere installati via remoto da altri dispositivi utilizzando programmi come\nNS-USBloader in modialità \"Tinfoil\". Per inviare file, apri uno\ndi questi software sul tuo PC o sul tuo smartphone, inserisci\nl'indirizzo IP (mostrato sullo schermo), seleziona i file e poi inviali alla\nconsole! Se il software che usi non ti permette di selezionare file\nspecifici, prova a cambiare l'estensione del file in qualcosa che venga accettato dal software.\nTinleaf Installer non legge l'estensione del file durante l'installazione via internet!\n\nSe proprio non riesci, copia i file nella SD e seleziona\nl'opzione \"Installa dalla SD\" dal menù principale!"
+                "desc": "I file possono essere installati via remoto da altri dispositivi utilizzando programmi come\nNS-USBloader in modalità \"Tinfoil\". Per inviare file, apri uno\ndi questi software sul tuo PC o sul tuo smartphone, inserisci\nl'indirizzo IP (mostrato sullo schermo), seleziona i file e poi inviali alla\nconsole! Se il software che usi non ti permette di selezionare file\nspecifici, prova a cambiare l'estensione del file in qualcosa che venga accettato dal software.\nTinleaf Installer non legge l'estensione del file durante l'installazione via internet!\n\nSe proprio non riesci, copia i file nella SD e seleziona\nl'opzione \"Installa dalla SD\" dal menù principale!"
             },
             "src": {
                 "title": "Da dove vuoi installare?",
@@ -66,14 +66,17 @@
         "sd": {
             "help": {
                 "title": "Aiuto",
-                "desc": "Copia i tuoi file NSP, NSZ, XCI, o XCZ nella SD, cercali e\nseleziona quelli che vuoi installare, poi premi Il tasto Più."
+                "desc": "Copia i tuoi file NSP, NSZ, XCI, o XCZ nella SD, cercali e\nseleziona quelli che vuoi installare, poi premi il tasto Più."
             },
-            "top_info": "Seleziona quali file vuoi installare, poi premi Il tasto Più!",
+            "top_info": "Seleziona quali file vuoi installare, poi premi il tasto Più!",
             "source_string": " dalla SD",
             "delete_info": " installato! Cancellarlo dalla SD?",
             "delete_info_multi": " file installati correttamente! Cancellarli dalla SD?",
             "delete_desc": "I file originali non sono più necessari dopo averli installati",
             "buttons": "\ue0e0 Seleziona File    \ue0e3 Seleziona tutto    \ue0ef Installa i File    \ue0e2 Aiuto    \ue0e1 Annulla"
+        },
+        "hdd": {
+            "source_string": " dall'HDD USB"
         },
         "usb": {
             "help": {
@@ -91,7 +94,7 @@
             "desc0": "Dove dovrebbe ",
             "desc1": " essere installato?",
             "desc00": "Dove dovrebbero essere ",
-            "desc01": " instalalti i file selezionati?",
+            "desc01": " installati i file selezionati?",
             "opt0": "SD",
             "opt1": "Memoria interna"
         },

@@ -4,15 +4,15 @@
             "sd": "Installer à partir de la carte SD",
             "net": "Installer à partir d'un LAN ou d'internet",
             "usb": "Installer à partir d'un périphèrique USB",
-			"hdd": "Install over USB HDD",
+            "hdd": "Install over USB HDD",
             "sig": "Gérer les patchs de signatures",
             "set": " Paramètres",
             "exit": " Quitter"
         },
-		"hdd": {
-			"title": "USB HDD",
-			"notfound": "USB HDD is not connected."
-		},
+        "hdd": {
+            "title": "USB HDD",
+            "notfound": "USB HDD is not connected."
+        },
         "net": {
             "title": "Connection au réseau impossible",
             "desc": "Vérifiez  que le mode avion est désactivé et que vous êtes connecté à un réseau local."
@@ -74,6 +74,9 @@
             "delete_info_multi": " fichiers installés avec succès ! Les supprimer de la carte SD ?",
             "delete_desc": "Les fichiers originaux ne sont plus nécessaires une fois qu'ils ont été installés.",
             "buttons": "\ue0e0 Sélectionnez un fichier    \ue0e3 Tout sélectionner    \ue0ef Installer un/des fichier(s)    \ue0e2 Aide    \ue0e1 Annuler"
+        },
+        "hdd": {
+            "source_string": " from USB HDD"
         },
         "usb": {
             "help": {
