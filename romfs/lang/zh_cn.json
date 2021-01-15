@@ -1,0 +1,195 @@
+{
+    "main":{
+        "menu": {
+            "sd": "从 SD 卡进行安装",
+            "net": "从本地网络或者因特网进行安装",
+            "usb": "从 USB 进行安装",
+            "sig": "管理签名补丁",
+            "set": "设置",
+            "exit": "退出"
+        },
+        "net": {
+            "title": "网络连接不可用",
+            "desc": "请检查是否已经禁用飞行模式，并且已经连接到本地网络。"
+        },
+        "usb": {
+            "warn": {
+                "title": "警告!",
+                "desc": "USB 安装方式可能只兼容于某些设备。\n如果你在 USB 安装过程中遇到问题，请不要直接拔掉 USB ！ \n建议使用 NS-USBloader 来进行 USB 安装\n或者在连接本地网络后使用本地网络或因特网安装替代 USB 安装!\n\n我很认真的和你说...",
+                "opt1": "不要再次提醒我"
+            },
+            "error": {
+                "title": "没有检测到 USB 连接",
+                "desc": "插入 USB 到兼容的设备进行安装"
+            }
+        },
+        "applet": {
+            "title": "不支持 Applet 模式",
+            "desc": "在 Applet 模式下运行 Tinleaf 安装器，你可能会遇到问题。\n如果真的遇到了问题，请使用已安装的游戏来运行 Tinleaf 安装器\n (按住 R 然后再打开游戏)！"
+        },
+        "buttons": "\ue0e0 选择    \ue0e1 退出"
+    },
+    "inst": {
+        "net": {
+            "help": {
+                "title": "帮助",
+                "desc": "你可以从其他设备使用 NS-USBloader 等工具的 Tinfoil 模式来远程安装文件。\n要将文件发送到你的 Switch，请在 PC 或者移动设备上打开这类软件，输入 Switch 的 IP 地址（你可以在屏幕上看到），\n选择文件，然后上传到主机！\n如果你使用的软件不支持所选文件的类型，请尝试重命名它的扩展名，\n是软件可以选择支持它。\nTinleaf 安装器不在乎网络安装方式的文件扩展名！\n\n你如果无法通过网络模式安装，你可以把文件复制到你的 SD 卡上，然后尝试在主菜单中选择 \"从 SD 卡安装\" 选项！"
+            },
+            "src": {
+                "title": "你想从哪里安装?",
+                "opt0": "URL",
+                "opt1": "谷歌云端硬盘"
+            },
+            "url": {
+                "hint": "输入文件的网络地址",
+                "invalid": "这个网址是错误的！",
+                "source_string": " 从 URL"
+            },
+            "gdrive": {
+                "hint": "输入公开的谷歌云端硬盘文件 ID",
+                "alt_name": "谷歌云端硬盘文件",
+                "source_string": " 从谷歌云端硬盘文件"
+            },
+            "top_info": "选择需要从服务器安装的文件，然后按下 + 按钮!",
+            "top_info1": "正在等待连接... 你的 swtich 的 IP 地址是: ",
+            "failed": "无法执行远程安装！",
+            "transfer_interput": "数据传输时发生错误。请检查你的网络连接。",
+            "source_string": " 通过本地网络",
+            "buttons": "\ue0e3 通过互联网安装    \ue0e2 帮助    \ue0e1 取消",
+            "buttons1": "\ue0e0 选择文件    \ue0e3 选择所有    \ue0ef 安装文件    \ue0e1 取消"
+        },
+        "sd": {
+            "help": {
+                "title": "帮助",
+                "desc": "你可以将 NSP, NSZ, XCI, 或者 XCZ 文件复制到你的 SD 卡中， 浏览并选择要安装的文件\n然后按下 + 按键。"
+            },
+            "top_info": "选择你要安装的文件，然后按下 + 按键。",
+            "source_string": " 从 SD 卡",
+            "delete_info": " 已安装！是否从 SD 卡中删除？",
+            "delete_info_multi": " 文件已经安装成功！是否从 SD 卡中删除？",
+            "delete_desc": "源文件在安装后就不再需要",
+            "buttons": "\ue0e0 选择文件    \ue0e3 选择所有    \ue0ef 安装文件    \ue0e2 帮助    \ue0e1 取消"
+        },
+        "usb": {
+            "help": {
+                "title": "帮助",
+                "desc": "可以通过其他设备的 USB 来安装文件，比如 NS-USBloader 的 Tinfoil 模式。 要发送文件到你的 Switch，请在 PC 打开这类软件\n选择你的文件，然后上传到你的主机中!\n\n不幸的是 USB 安装可能需要在某些需要进行特别的设置，而且有时候可能会有相当多的 bug。 如果你无法安装，可以尝试一下局域网或者互联网安装模式，\n或者你可以把文件复制到你的 SD 卡上，然后尝试在主菜单中选择 \"从 SD 卡安装\" 选项！"
+            },
+            "top_info": "USB 连接成功！ 等待文件列表发送...",
+            "top_info2": "选择要从 USB 安装的文件，然后按下 + 按键！",
+            "error": "USB 传输超时或失败",
+            "source_string": " 通过 USB",
+            "buttons": "\ue0e2 (按住) 帮助    \ue0e1 (按住) 取消",
+            "buttons2": "\ue0e0 选择文件    \ue0e3 选择所有    \ue0ef 安装文件   \ue0e1 取消"
+        },
+        "target": {
+            "desc0": "哪里 ",
+            "desc1": " 安装到?",
+            "desc00": "选择安装到哪里 ",
+            "desc01": " 文件安装到？",
+            "opt0": "SD 卡",
+            "opt1": "内部储存"
+        },
+        "info_page": {
+            "top_info0": "正在安装中 ",
+            "preparing": "正在准备安装...",
+            "failed": "安装失败 ",
+            "failed_desc": "可以在系统设置中删除部分已经安装的内容。",
+            "complete": "安装完成",
+            "desc0": " 文件安装成功！",
+            "desc1": " 已安装！",
+            "downloading": "正在下载中 ",
+            "at": " 到 "
+        },
+        "nca_verify": {
+            "title": "检测到无效的 NCA 签名！",
+            "desc": "签名不正确的软件只能从可信赖的来源安装。 重新打包的卡带文件或者 DLC 解锁器也会显示此警告.\n你可以在 Tinleaf 安装器程序设置中禁用此检查。\n\n你确定要继续安装吗？",
+            "opt1": "是的, 我已经了解存在的风险",
+            "error": "所需要的 NCA 没有正确的签名： "
+        },
+        "finished": [
+            "享受你的 \"合法备份\"！",
+            "我敢肯定，在您尝试这些游戏之后，真的去购买它会带来很多乐趣！",
+            "你购买游戏了吗？ 任天堂会感谢你购买游戏！",
+            "绕过 DRM 很棒, 不是吗？",
+            "购买下载版本，帮助保护环境！（但是可能就在某鱼无法回血了)",
+            "任天堂派遣的忍者已经赶去你所在的位置。",
+            "而且我们根本不需要渗透你的大脑就可以到达你这里！"
+        ]
+    },
+    "sig": {
+        "install": "安装",
+        "uninstall": "卸载",
+        "update": "更新",
+        "version_text": "你目前已经安装了对应 HOS 版本的签名补丁 ",
+        "title0": "是否安装签名补丁？",
+        "desc0": "安装和游玩官方软件需要安装签名补丁。",
+        "backup_failed": "无法备份 Hekate patches.ini！是否仍然安装？",
+        "backup_failed_desc": "如果你不使用 Hekate ，你可以忽略这个警告。",
+        "download_failed": "无法下载签名补丁",
+        "download_failed_desc": "你可能在 Tinleaf 安装器中填写了无效的下载来源，\n 或者来源的服务器有什么问题。",
+        "version_text2": "你的签名补丁已经更新到对应的 HOS 版本 ",
+        "install_complete": "安装完毕！",
+        "complete_desc": "重新启动你的主机后应用",
+        "restart": "重新启动",
+        "later": "我等一下再做",
+        "extract_failed": "无法解压缩文件！",
+        "restore_failed": "无法还原原始的 Hekate patches.ini! 是否继续卸载？",
+        "uninstall_complete": "卸载完成",
+        "remove_failed": "无法删除签名补丁",
+        "remove_failed_desc": "文件可能已经重命名或已删除",
+        "generic_error": "无法安装签名补丁！"
+    },
+    "options": {
+        "menu_items": {
+            "ignore_firm": "忽略游戏所要求的的最低固件版本号",
+            "nca_verify": "验证 NCA 签名然后安装",
+            "boost_mode": "在安装中启用 \"加速模式\"",
+            "ask_delete": "在安装后询问是否删除源文件",
+            "auto_update": "自动检查 Tinleaf 安装器是否有更新",
+            "sig_url": "签名补丁源 URL: ",
+            "language": "语言: ",
+            "check_update": "检查 Tinleaf 安装器是否有更新",
+            "credits": "鸣谢"
+        },
+        "nca_warn": {
+            "title": "警告!",
+            "desc": "有些安装文件可能包含恶意内容！ 请在确认安装文件绝对可信的的情况下，禁用此功能\n\n你是否仍然确定禁用 NCA 签名验证？",
+            "opt1": "是的，switch 有可能变成一块砖块"
+        },
+        "sig_hint": "输入一个网址来获取签名补丁",
+        "update": {
+            "title": "有新的更新可用",
+            "desc0": "Tinleaf 安装器 ",
+            "desc1": " 现在已经可用! 是否准备更新？",
+            "opt0": "更新",
+            "top_info": "更新到 Tinleaf 安装器 ",
+            "bot_info": "正在下载 Tinleaf 安装器 ",
+            "bot_info2": "正在解压缩 Tinleaf 安装器 ",
+            "complete": "已经更新完毕!",
+            "failed": "更新失败！",
+            "end_desc": "软件现在将要关闭。",
+            "title_check_fail": "没有找到更新",
+            "desc_check_fail": "你是用的已经是最新版本的 Tinleaf 安装器!"
+        },
+        "credits": {
+            "title": "感谢以下朋友！",
+            "desc": "- Adubbz"
+        },
+        "language": {
+            "title": "选择 Tinleaf 安装器的语言",
+            "desc": "软件需要关闭然后才能更改语言。按 B 键取消。",
+            "system_language": "系统"
+        },
+        "title": "更改 Tinleaf 安装器的设置！",
+        "buttons": "\ue0e0 选择/更改    \ue0e1 取消"
+    },
+    "common": {
+        "ok": "确定",
+        "cancel": "取消",
+        "close": "关闭",
+        "yes": "是",
+        "no": "否",
+        "cancel_desc": "按 B 键取消"
+    }
+}
