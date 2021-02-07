@@ -1,0 +1,8 @@
+.*/
+build/
+*~
+*.bak
+*.nro
+*.nacp
+*.elf
+.vscode
