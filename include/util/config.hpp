@@ -5,7 +5,7 @@
 namespace inst::config {
     static const std::string appDir = "sdmc:/switch/tinleaf";
     static const std::string configPath = appDir + "/config.json";
-    static const std::string appVersion = "1.4.4";
+    static const std::string appVersion = "1.4.5";
 
     extern std::string gAuthKey;
     extern std::string sigPatchesUrl;
