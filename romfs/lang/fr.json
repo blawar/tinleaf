@@ -4,14 +4,14 @@
             "sd": "Installer à partir de la carte SD",
             "net": "Installer à partir d'un LAN ou d'internet",
             "usb": "Installer à partir d'un périphèrique USB",
-            "hdd": "Install over USB HDD",
+            "hdd": "Install à partir d'un USB HDD",
             "sig": "Gérer les patchs de signatures",
             "set": " Paramètres",
             "exit": " Quitter"
         },
         "hdd": {
             "title": "USB HDD",
-            "notfound": "USB HDD is not connected."
+            "notfound": "Le HDD n'est pas connecté."
         },
         "net": {
             "title": "Connection au réseau impossible",
