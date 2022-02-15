@@ -1,6 +1,7 @@
 #include <iostream>
 #include <switch.h>
 #include <filesystem>
+#include <pu/Plutonium>
 #include "util/lang.hpp"
 #include "util/config.hpp"
 
@@ -36,10 +37,13 @@ namespace Language {
                 break;
             case 5:
             case 14:
-                languagePath = "romfs:/lang/es.json";
+                languagePath = "romfs:/lang/es-419.json";
                 break;
             case 6:
-                languagePath = "romfs:/lang/zh-CN.json";
+            case 15:
+                languagePath = "romfs:/lang/zh-Hans.json";
+                // the default font will miss some chinese character, so use a chinese font (simplified)
+                pu::ui::render::SetDefaultFontFromShared(pu::ui::render::SharedFont::ChineseSimplified);
                 break;
             case 7:
                 languagePath = "romfs:/lang/ko.json";
@@ -54,7 +58,10 @@ namespace Language {
                 languagePath = "romfs:/lang/ru.json";
                 break;
             case 11:
-                languagePath = "romfs:/lang/zh-TW.json";
+            case 16:
+                languagePath = "romfs:/lang/zh-Hant.json";
+                // the default font will miss some chinese character, so use a chinese font (traditional)
+                pu::ui::render::SetDefaultFontFromShared(pu::ui::render::SharedFont::ChineseTraditional);
                 break;
             default:
                 languagePath = "romfs:/lang/en.json";
